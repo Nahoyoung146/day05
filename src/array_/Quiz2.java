@@ -42,10 +42,7 @@ public class Quiz2 {
 
 			else if (num == 2) {
 				for (; i < id.length; i++) {
-					System.out.println("메뉴로 나가고 싶으면 0번을 누르세요\n계속 진행을 원하시면 아무 숫자나 누르세요");
-					int num1 = sc.nextInt();
-					if (num1 == 0)
-						break;
+					System.out.println(i);
 					System.out.print("저장할 아이디 입력 : ");
 					id[i] = sc.next();
 
@@ -66,11 +63,21 @@ public class Quiz2 {
 								System.out.print("저장할 비밀번호 입력 : ");
 								pwd[i] = sc.next();
 								System.out.println("회원가입 성공!!!\n축하합니다.");
-
 								if (i == id.length - 1)
-									System.out.println("더 이상 저장할 공간이 없습니다.");
+									System.out.println("저장 공간이 부족합니다.");
 							}
+
+							else
+								continue;
+
+							break;
 						}
+					}
+					if (i != id.length - 1) {
+						System.out.println("메뉴로 나가고 싶으면 0번을 누르세요\n계속 진행을 원하시면 아무 숫자나 누르세요");
+						int num1 = sc.nextInt();
+						if (num1 == 0)
+							break;
 					}
 				}
 			}
